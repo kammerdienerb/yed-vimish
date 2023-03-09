@@ -717,6 +717,10 @@ void vimish_normal(int key, char *key_str) {
             YEXE("select-lines");
             break;
 
+        case CTRL_V:
+            YEXE("select-rect");
+            break;
+
         case 'p':
             vimish_start_repeat(key);
             YEXE("paste-yank-buffer");
