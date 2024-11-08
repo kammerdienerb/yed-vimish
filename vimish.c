@@ -512,7 +512,7 @@ static void vimish_do_till_fw(int key) {
             yed_set_cursor_within_frame(f, f->cursor_line, col);
             break;
         }
-        col += yed_get_glyph_width(*g);
+        col += yed_get_glyph_width(g);
     }
 
     last_till_key = key;
@@ -541,7 +541,7 @@ static void vimish_do_till_bw(int key, int stop_before) {
         if (g->c == key) {
             yed_set_cursor_within_frame(f,
                                         f->cursor_line,
-                                        col + (stop_before * yed_get_glyph_width(*g)));
+                                        col + (stop_before * yed_get_glyph_width(g)));
             break;
         }
         if (col == 1) { break; } /* Didn't find it. Prevent endless loop. */
